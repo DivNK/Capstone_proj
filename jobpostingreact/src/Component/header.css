@@ -1,0 +1,266 @@
+.container_header
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 0;
+   padding: 0;
+   background: #006FCB;
+    
+}
+.header{
+    width: 100%;
+height: 76px;
+left: 0px;
+top: 0px;
+    
+}
+
+
+.sec1{
+    width: 25%;
+    height: 100%;
+    /* padding: 8px; */
+    display: flex;
+
+    
+}
+.sec2{
+    width: 70%;
+    height: 100%;
+    /* padding: 8px; */
+    display: flex;
+    align-items: center;
+    color: #FDFDFD;
+    justify-content: space-around;
+
+    
+}
+.sec3{
+    width: 5%;
+    height: 100%;
+    /* padding: 8px; */
+    display: flex;
+
+
+    
+}
+.ind-dash
+{
+
+    width: 132px;
+height: 78px;
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+
+.ind-ja
+{
+
+ width: 132px;
+height: 78px;
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.ind-aj
+{
+
+    width: 132px;
+height: 78px;
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.ind-act
+{
+
+    width: 132px;
+height: 78px;
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.ind-p
+{
+
+    width: 132px;
+height: 78px;
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.ind-dash:hover
+{
+    background: #349EF5;
+
+  
+}
+
+ .ind-dash:after {
+    border-width: 10px;
+    border-style: solid;
+  
+    content: "";
+    display: none;
+    /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: 64px;
+    right: 10px; 
+left: 600px;
+
+
+background: #349EF5;
+border-color: #349EF5;
+transform: rotate(-45deg);
+} 
+.ind-dash:hover:after,
+.ind-dash:hover:before {
+    /* The Speech-bubble tooltip and pointer will appear on hover */
+    display: block;
+}
+.ind-p:hover
+{
+    background: #349EF5;
+
+  
+}
+
+ .ind-p:after {
+    border-width: 10px;
+    border-style: solid;
+  
+    content: "";
+    display: none;
+    /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: 64px;
+    right: 10px; 
+left: 875px;
+
+
+background: #349EF5;
+border-color: #349EF5;
+transform: rotate(-45deg);
+} 
+.ind-p:hover:after,
+.ind-p:hover:before {
+    /* The Speech-bubble tooltip and pointer will appear on hover */
+    display: block;
+}
+
+
+.ind-aj:hover
+{
+    background: #349EF5;
+
+  
+}
+
+ .ind-aj:after {
+    border-width: 10px;
+    border-style: solid;
+  
+    content: "";
+    display: none;
+    /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: 64px;
+    right: 10px; 
+left: 1145px;
+
+
+background: #349EF5;
+border-color: #349EF5;
+transform: rotate(-45deg);
+} 
+.ind-aj:hover:after,
+.ind-aj:hover:before {
+    /* The Speech-bubble tooltip and pointer will appear on hover */
+    display: block;
+}
+
+
+
+
+.ind-act:hover
+{
+    background: #349EF5;
+
+  
+}
+
+ .ind-act:after {
+    border-width: 10px;
+    border-style: solid;
+  
+    content: "";
+    display: none;
+    /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: 64px;
+    right: 10px; 
+left: 1410px;
+
+
+background: #349EF5;
+border-color: #349EF5;
+transform: rotate(-45deg);
+} 
+.ind-act:hover:after,
+.ind-act:hover:before {
+    /* The Speech-bubble tooltip and pointer will appear on hover */
+    display: block;
+}
+
+
+
+.ind-ja:hover
+{
+    background: #349EF5;
+
+  
+}
+
+ .ind-ja:after {
+    border-width: 10px;
+    border-style: solid;
+  
+    content: "";
+    display: none;
+    /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: 64px;
+    right: 10px; 
+left: 1690px;
+
+
+background: #349EF5;
+border-color: #349EF5;
+transform: rotate(-45deg);
+} 
+.ind-ja:hover:after,
+.ind-ja:hover:before {
+    /* The Speech-bubble tooltip and pointer will appear on hover */
+    display: block;
+}
+
+
