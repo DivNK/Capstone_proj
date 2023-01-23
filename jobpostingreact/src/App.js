@@ -11,8 +11,8 @@ import Header from './Component/Header'
 function App() {
   return (
     <Routes>
-    <Route element={<Header />} path="/" />
-    <Route element={<Login />} path="/login" />
+    <Route element={<Header />} path="/temp" />
+    <Route element={<Login />} path="/" />
     </Routes>
   );
 }

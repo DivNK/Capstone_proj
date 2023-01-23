@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-    # skip_before_action :verify_authenticity_token
+    skip_before_action :verify_authenticity_token
     def index
         
     end
@@ -10,7 +10,7 @@ class LoginController < ApplicationController
         else
             if(usr.authenticate(params[:password]))
                 session[:current_user_id] = usr.id
-                render json: "Login successful"
+                render json: "Login Successfull"
             else
                 render json: "Incorrect password"
             end 
