@@ -1,0 +1,90 @@
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    
+    padding: 10px;
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    overflow-y: scroll;
+}
+
+.card {
+    margin: 8px;
+    height: 25%;
+    width: 90%;
+    background-color: white;
+    left: 142px;
+    top: 1476px;
+    border-radius: 7px;
+    padding: 15px;
+}
+.Titletext{    
+    color: #006FCB;    
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    text-align: left;    
+}
+
+.headerText {
+    height: 48px;
+}
+.applyBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    width: 128px;
+    height: 48px;
+   
+    right: 145px;
+    top: 25px;
+    background: #FFFFFF;
+    border: 1px solid #006FCB;
+    border-radius: 100px;
+}
+.line2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 58px;   
+
+}
+.line2>div>img{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.line2>div>text{
+  
+    height: 21px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333333;
+    margin-right: 15px;
+}
+.line2>div{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 5px;
+}
+.jobDescription>p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333333;
+}
