@@ -4,10 +4,62 @@ import "./subsrch.css"
 export default function App() {
     const [value, setValue] = useState('');
     const [srchval, setSrchval] = useState({});
+    const [value1, setValue1] = useState('');
+    const [value2, setValue2] = useState('');
+    const [value3, setValue3] = useState('');
+    const [value4, setValue4] = useState('');
 
     const handleChange = (e) => {
         console.log(e.target.value);
         setValue(e.target.value);
+
+
+        setSrchval({
+            ...srchval,
+            [e.target.name]: e.target.value
+        })
+
+
+    };
+    const handleChange1 = (e) => {
+        console.log(e.target.value);
+        setValue1(e.target.value);
+
+
+        setSrchval({
+            ...srchval,
+            [e.target.name]: e.target.value
+        })
+
+
+    };
+    const handleChange2 = (e) => {
+        console.log(e.target.value);
+        setValue2(e.target.value);
+
+
+        setSrchval({
+            ...srchval,
+            [e.target.name]: e.target.value
+        })
+
+
+    };
+    const handleChange3 = (e) => {
+        console.log(e.target.value);
+        setValue3(e.target.value);
+
+
+        setSrchval({
+            ...srchval,
+            [e.target.name]: e.target.value
+        })
+
+
+    };
+    const handleChange4 = (e) => {
+        console.log(e.target.value);
+        setValue4(e.target.value);
 
 
         setSrchval({
@@ -39,7 +91,7 @@ export default function App() {
 
                     </div>
                     <div className="subin">
-                        <select className="ardsub" name="industry" value={value} onChange={handleChange}>
+                        <select className="ardsub" name="industry" value={value1} onChange={handleChange1}>
 
                             <option value="all">All</option>
 
@@ -51,7 +103,7 @@ export default function App() {
 
                     </div>
                     <div className="subin">
-                        <select className="ardsub" name="location" value={value} onChange={handleChange}>
+                        <select className="ardsub" name="location" value={value2} onChange={handleChange2}>
 
                             <option value="all">All</option>
 
@@ -62,7 +114,7 @@ export default function App() {
                         </select>
                     </div>
                     <div className="subin" >
-                        <select className="ardsub" name="type" value={value} onChange={handleChange}>
+                        <select className="ardsub" name="type" value={value3} onChange={handleChange3}>
 
                             <option value="all">All</option>
 
@@ -73,7 +125,7 @@ export default function App() {
                         </select>
                     </div>
                     <div className="subin">
-                        <select className="ardsub" name="pdt" value={value} onChange={handleChange}>
+                        <select className="ardsub" name="pdt" value={value4} onChange={handleChange4}>
 
                             <option value="all">All</option>
 

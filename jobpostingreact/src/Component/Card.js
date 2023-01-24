@@ -5,7 +5,7 @@ import './card.css';
 export default function Card() {
     return (
 
-            <div className='container'>
+            <div className='cont-card'>
             <div className='card'>
                 <div className='headerText'>
                 <text className='Titletext'>JPC - 1692 Developer</text>

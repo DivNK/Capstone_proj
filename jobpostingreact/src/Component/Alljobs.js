@@ -5,6 +5,7 @@ import Axios from "axios"
 import Myapp from "./Myapp"
 import Search from "./Search"
 import Subsrch from "./Subsrch"
+import Card from "./Card"
 
 export default function App() {
 return(<>
@@ -12,6 +13,7 @@ return(<>
 <Myapp></Myapp>
 <Search></Search>
 <Subsrch></Subsrch>
+<Card></Card>
 </>
 
 );

@@ -40,7 +40,7 @@ export default function App() {
             // setSessionId(res.data.session_id);
             //   console.log("Session ID: ", sessionId);
             if (res.data.includes("Successfull")) {
-                navigate('/temp')
+                navigate('/alljobs')
             }
         } catch (e) {
             console.log(e);
