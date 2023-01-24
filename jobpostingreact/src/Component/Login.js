@@ -73,9 +73,9 @@ export default function App() {
                     <legend >Login Details</legend>
                     <br></br>
                     <div className='vals'><p> Email </p><input type="email" name="email" onChange={handleChange} /></div>
-                    <div className='vals'> <p>Password</p><input type="text" name="password" onChange={handleChange} /></div>
+                    <div className='vals'> <p>Password</p><input type="password" name="password" onChange={handleChange} /></div>
                     <br></br>
-                    <button class="button" onClick={sendData}>Login</button>
+                    <button className="button" onClick={sendData}>Login</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,56 @@
+.srchbutton
+{
+
+    color: white;
+    height: 100%;
+    width: 9%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    cursor: pointer;
+    background: #006FCB;
+border: 2px solid #006FCB;
+border-radius: 3px;
+}
+.srch
+{
+    /* position: absolute; */
+width: 100%;
+height: 15%;
+/* left: 94px;
+top: 114px; */
+margin-top: 1%;
+margin-left:5% ;
+font-weight: 500;
+font-size: 24px;
+line-height: 150%;
+color: #333333;
+
+}
+.srch-in
+{display: flex;
+    width: 95%;
+    height: 40%;
+   
+}
+.frmsrch
+{
+  
+    width: 90%;
+    height: 100%;
+}
+.frmsrch>input
+{
+    border: 1px solid #006FCB;     
+    outline: none;
+    margin-right: 3%;
+    width: 85%;
+    height: 100%;
+    border-radius: 3px;
+}
+.frmsrch>input:hover
+{
+    border: 2px solid #006FCB;  
+}

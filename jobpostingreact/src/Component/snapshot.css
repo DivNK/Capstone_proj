@@ -1,0 +1,138 @@
+.cont-snap
+{
+    /* position: absolute; */
+width: 65%;
+height: 15%;
+left: 94px;
+top: 114px;
+margin-top: 1.5%;
+margin-left:5% ;
+font-weight: 500;
+font-size: 24px;
+line-height: 150%;
+color: #333333;
+
+}
+.row2
+{
+   margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.i-box1{
+    width: 25%;
+    height: 100%;
+    
+    background: #FFFFFF;
+    border-radius: 7.5px;
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.rnd1
+{
+    height: 100%;
+    width: 20%;
+    padding: 4%;
+    margin-left: 15px;
+    background: #D4E5FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.i-box2{
+    /* width: 300.5px;
+    height: 105px; */
+    height: 100%;
+    
+    width: 25%;
+    margin-right: 3%;
+    background: #FFFFFF;
+    border-radius: 7.5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.rnd2
+{
+    /* height: 70px;
+    width: 70px; */
+    height: 100%;
+    width: 20%;
+    padding: 4%;
+    margin-left: 15px;
+    background: #D4E5FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.i-box3{
+    /* width: 300.5px;
+    height: 105px; */
+    height: 100%;
+
+    width: 25%;
+    background: #FFFFFF;
+    border-radius: 7.5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.rnd3
+{
+    /* height: 70px;
+    width: 70px; */
+    height: 100%;
+    width: 20%;
+    padding: 4%;
+    margin-left: 15px;
+    background: #D4E5FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alljb-val1
+{
+    color: #006FCB;
+    font-size: larger;
+    
+}
+.alljb1
+{
+    margin-left: 3%;
+    margin-right: 15%;
+    
+}
+.alljb-val2
+{
+    color: #006FCB;
+    font-size: larger;
+    
+}
+.alljb2
+{
+    margin-left: 3%;
+    margin-right: 7%;
+}
+.alljb-val3
+{
+    color: #006FCB;
+    font-size: larger;
+    
+}
+.alljb3
+{
+    margin-left: 3%;
+    margin-right: 5%;
+}
