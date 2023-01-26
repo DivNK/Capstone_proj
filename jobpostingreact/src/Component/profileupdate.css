@@ -1,0 +1,30 @@
+.updateProfileForm{
+    margin-top: 5%;
+    width:100%;
+    padding: 20px;
+    max-width: 700px;
+    background-color: #EFF6FF;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.updateProfileForm>button{
+    border: 1px solid #006FCB;
+    border-radius: 100px;
+     margin-right: 180px;
+    height: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.updateProfileForm>table{
+    width: 700px;   
+}
+.tableLabel {
+    width: 30%;
+}
+.tableInput {
+    width: 70%;
+}
+.tableInput>input {
+    width: 300px;
+}
