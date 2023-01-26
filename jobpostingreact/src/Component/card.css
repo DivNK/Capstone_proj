@@ -1,26 +1,26 @@
 
 .cont-card {
     /* height: %; */
-    width: 100%;
+    width: 95%;
     background-color: inherit;
-    margin-left: 2%;
+    margin-left: 4%;
     /* padding: 10px; */
     display: flex;
     
     flex-wrap: wrap;
     
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .card {
-    margin: 3%;
+    margin: 1%;
     height: 25%;
     width: 90%;
     background-color: white;
     /* left: 142px;
     top: 1476px; */
     border-radius: 7px;
-    padding: 5%;
+    padding: 2%;
 }
 .Titletext{    
     color: #006FCB;    
@@ -64,7 +64,7 @@
     margin-top: auto;
     margin-bottom: auto;
 }
-.line2>div>text{
+.line2>div>p{
   
     height: 21px;
     font-family: 'Roboto';

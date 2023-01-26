@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :user
   resources :login
+  resources :candidateprofile
+  resources :job
+  get "searcheligible" , to:"job#searcheligible"
 end

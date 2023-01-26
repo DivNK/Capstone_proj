@@ -6,13 +6,14 @@ class UserController < ApplicationController
         puts "******************User Create***********************"
 
 
-      p=User.create('name': params[:name],
-        'email': params[:email],
-        'password': params[:password])
+      p=User.create('email': params[:email],
+        'password': params[:password],
+        'usertype': "Student")
+        cp=Candidateprofile.create('email': params[:email])
          
     #   puts p
       render json: "Data Added"
-        e
+        
 end
 def show
     v = User.all

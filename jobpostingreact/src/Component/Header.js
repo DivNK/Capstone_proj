@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React,{useState,useEffect,useContext} from "react";
+import DataContext from "../Context/DataContext"
 import { useNavigate } from "react-router-dom";
 import Axios from "axios"
 import {
@@ -10,6 +11,7 @@ import "./header.css"
     
 export default function App()
 {
+        let ctx = useContext(DataContext);
     return(
     <div className="header">
         <div className="container_header">
@@ -36,7 +38,7 @@ export default function App()
                     </div>
                     </div>
                     <div className="sec3">
-                    <img src="https://cdn.iconscout.com/icon/free/png-128/avatar-365-456317.png" width="25" />
+                    <img src={ctx.pic} width="25" />
                     </div>
                     </div>
                     </div>

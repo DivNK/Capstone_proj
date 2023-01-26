@@ -49,7 +49,7 @@ export default function App() {
 
 
         <div className='cont-app'>
-            <div classname="row1a">
+            <div className="row1a">
                 My Application
             </div>
             <div className='row2a'>

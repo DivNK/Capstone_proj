@@ -13,7 +13,7 @@
 }
 .header{
     width: 100%;
-height: 76px;
+height: 10%;
 left: 0px;
 top: 0px;
     
@@ -21,10 +21,11 @@ top: 0px;
 
 
 .sec1{
-    width: 25%;
+    width: 15%;
     height: 100%;
     /* padding: 8px; */
     display: flex;
+    margin-left: 1%;
 
     
 }
@@ -35,35 +36,44 @@ top: 0px;
     display: flex;
     align-items: center;
     color: #FDFDFD;
-    justify-content: space-around;
+    justify-content: left;
+    
 
     
 }
 .sec3{
-    width: 5%;
-    height: 100%;
+    width: 6%;
+    height: 50%;
     /* padding: 8px; */
     display: flex;
+    border-radius: 50%;
 
 
     
 }
+.sec3>img{
+     height:100%;
+    width: 40%; 
+    border-radius: 50%;
+
+}
 .ind-dash
 {
 
-    width: 132px;
-height: 78px;
+    width: 11%;
+    height: 100%;
 
 display: flex;
 align-items: center;
 justify-content: space-evenly;
+
 }
 
 .ind-ja
 {
 
- width: 132px;
-height: 78px;
+    width: 8%;
+height: 100%;
 
 display: flex;
 align-items: center;
@@ -72,18 +82,19 @@ justify-content: space-evenly;
 .ind-aj
 {
 
-    width: 132px;
-height: 78px;
+    width: 10%;
+height: 100%;
 
 display: flex;
 align-items: center;
 justify-content: space-evenly;
+
 }
 .ind-act
 {
 
-    width: 132px;
-height: 78px;
+    width: 7%;
+height: 100%;
 
 display: flex;
 align-items: center;
@@ -92,8 +103,8 @@ justify-content: space-evenly;
 .ind-p
 {
 
-    width: 132px;
-height: 78px;
+    width: 13%;
+height: 100%;
 
 display: flex;
 align-items: center;
@@ -115,10 +126,10 @@ justify-content: space-evenly;
     /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
     height: 1px;
     width: 1px;
-    position: absolute;
-    top: 64px;
-    right: 10px; 
-left: 600px;
+    position: relative;
+    top:50%;
+    right: 35%; 
+/* left: 0%; */
 
 
 background: #349EF5;
@@ -146,10 +157,9 @@ transform: rotate(-45deg);
     /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
     height: 1px;
     width: 1px;
-    position: absolute;
-    top: 64px;
-    right: 10px; 
-left: 875px;
+    position: relative;
+    top:50%;
+    right: 35%; 
 
 
 background: #349EF5;
@@ -179,10 +189,9 @@ transform: rotate(-45deg);
     /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
     height: 1px;
     width: 1px;
-    position: absolute;
-    top: 64px;
-    right: 10px; 
-left: 1145px;
+    position: relative;
+    top:50%;
+    right: 35%; 
 
 
 background: #349EF5;
@@ -214,10 +223,9 @@ transform: rotate(-45deg);
     /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
     height: 1px;
     width: 1px;
-    position: absolute;
-    top: 64px;
-    right: 10px; 
-left: 1410px;
+    position: relative;
+    top:50%;
+    right: 35%; 
 
 
 background: #349EF5;
@@ -235,6 +243,7 @@ transform: rotate(-45deg);
 .ind-ja:hover
 {
     background: #349EF5;
+    
 
   
 }
@@ -248,10 +257,9 @@ transform: rotate(-45deg);
     /* Width and height could  be left out, but I prefer a less 'pointy' triangle */
     height: 1px;
     width: 1px;
-    position: absolute;
-    top: 64px;
-    right: 10px; 
-left: 1690px;
+    position: relative;
+    top:50%;
+    right: 35%; 
 
 
 background: #349EF5;

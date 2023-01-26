@@ -19,9 +19,7 @@ export default function App() {
 
     // useEffect(() => {
     //     const fetchData = async () => {
-    //        try{let responseall = await Axios.get("http://127.0.0.1:3001/alljobs"); 
-    //        let responseeligible = await Axios.get("http://127.0.0.1:3001/eligiblejobs"); 
-    //        let responseapplied = await Axios.get("http://127.0.0.1:3001/appliedjob"); 
+    //        try{let responseall = await Axios.get("http://127.0.0.1:3001/allcount"); 
     //         console.log(res.data);
     //         setData(responseall.data)
 
@@ -41,14 +39,28 @@ export default function App() {
 
 
     // let filterData = data.filter((ele) => ele.bookAuthor.toLowerCase().includes(inputValue.toLowerCase()) || ele.bookName.toLowerCase().includes(inputValue.toLowerCase()));
+    useEffect(() => {
+        let subheader = document.querySelector(".row2")
+        console.log(subheader.children);
+        let childofSubheader = subheader.children;
+        for (let i = 0; i < childofSubheader.length; i++){
+            console.log(childofSubheader[i]);
+            childofSubheader[i].addEventListener("click", (e) => {
+                //change context
+                        console.log(e.target.className);
+                navigate("/snapshot",{state:childofSubheader[i].className})
+            })
+        }
 
+
+    },[])
     
     return (
 
 
 
         <div className='cont-snap'>
-            <div classname="row1">
+            <div className="row1">
                 Snapshot
             </div>
             <div className='row2'>
