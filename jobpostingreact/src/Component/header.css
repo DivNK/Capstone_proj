@@ -51,9 +51,9 @@ top: 0px;
 
     
 }
-.sec3>img{
+.sec3>a>img{
      height:100%;
-    width: 40%; 
+    width: 100%; 
     border-radius: 50%;
 
 }

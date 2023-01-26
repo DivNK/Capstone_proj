@@ -1,27 +1,27 @@
 input{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
-  .registerMe{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.registerMe{
+  
+  margin:auto;
+  max-width: 500px;
+}
+.registerMe>button{
+  
+    border: 1px solid #006FCB;
+    border-radius: 10px;
+    margin-left: 200px;
+    height: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
     
-    margin:auto;
-    max-width: 500px;
-  }
-  .registerMe>button{
-    
-      border: 1px solid #006FCB;
-      border-radius: 10px;
-      margin-left: 200px;
-      height: 48px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      
-  }
-  h1{
-    margin-left: 100px;
-  }
+}
+.registerMe>h1{
+  margin-left: 100px;
+}
     
     
   

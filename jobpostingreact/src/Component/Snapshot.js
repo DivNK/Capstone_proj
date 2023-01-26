@@ -15,45 +15,41 @@ export default function App() {
 
     const navigate = useNavigate();
     let [data, setData] = useState([]);
+    
     let [inputValue, setinputValue] = useState('')
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //        try{let responseall = await Axios.get("http://127.0.0.1:3001/allcount"); 
-    //         console.log(res.data);
-    //         setData(responseall.data)
-
-    //         // arryay of objects
-    //     }catch(e)
-    //     {
-            
-    //         console.log(e);
-    //     }
-    // } 
-    //     {
-
-    //     }
-    //     fetchData()
-    // }, [])
-    // console.log(data);
-
-
-    // let filterData = data.filter((ele) => ele.bookAuthor.toLowerCase().includes(inputValue.toLowerCase()) || ele.bookName.toLowerCase().includes(inputValue.toLowerCase()));
     useEffect(() => {
-        let subheader = document.querySelector(".row2")
-        console.log(subheader.children);
-        let childofSubheader = subheader.children;
-        for (let i = 0; i < childofSubheader.length; i++){
-            console.log(childofSubheader[i]);
-            childofSubheader[i].addEventListener("click", (e) => {
-                //change context
-                        console.log(e.target.className);
-                navigate("/snapshot",{state:childofSubheader[i].className})
-            })
+        const fetchData = async () => {
+           try{
+            let res = await Axios.get("/count"); 
+            console.log(res.data);
+            setData(res.data)
+            let subheader = document.querySelector(".row2")
+            console.log(subheader.children);
+            let childofSubheader = subheader.children;
+            for (let i = 0; i < childofSubheader.length; i++){
+                console.log(childofSubheader[i]);
+                childofSubheader[i].addEventListener("click", (e) => {
+                    //change context
+                            console.log(e.target.className);
+                    navigate("/snapshot",{state:childofSubheader[i].className})
+                })
+            }
+
+            // arryay of objects
+        }catch(e)
+        {
+            
+            console.log(e);
         }
+    } 
+        {
 
+        }
+        fetchData()
+    }, [])
+    console.log(data);
 
-    },[])
     
     return (
 
@@ -70,7 +66,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb1">All Jobs
-                    <div className="alljb-val1">100</div>
+                    <div className="alljb-val1">{data.alljob}</div>
                     </div>
                     
                     <img src="images/arrow.png" />
@@ -84,7 +80,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb2">Eligible Jobs
-                    <div className="alljb-val2">80</div>
+                    <div className="alljb-val2">{data.eligiblejob}</div>
                     </div>
                     <img src="images/arrow.png" />
                 </div>
@@ -94,7 +90,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb3">Applied Jobs
-                    <div className="alljb-val3">70</div>
+                    <div className="alljb-val3">{data.appliedjob}</div>
                     </div>
                     <img src="images/arrow.png" />
                 </div>

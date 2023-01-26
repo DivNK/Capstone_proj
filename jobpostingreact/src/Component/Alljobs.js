@@ -9,6 +9,9 @@ import DataContext from "../Context/DataContext"
 
 export default function App() {
     let [data, setData] = useState([]);
+    let [dataappprofile, setDataappprofile] = useState([]);
+    let apply =[]
+    
     let ctx = useContext(DataContext);
     console.log('email');
     console.log(ctx.email);
@@ -18,10 +21,18 @@ export default function App() {
 
     useEffect(()=>{
         const fetchall = async () =>{
-            try{let res = await Axios.get("/job"); // if you use proxy then only /book isusing cros gem then complete path
+            try{
+                let res = await Axios.get("/job");
+                let resappprofile = await Axios.get("/appprofile");
+              
             console.log(res.data);
+           
+            
             console.log("Inside fetch");
+            console.log(resappprofile.data);
             setData(res.data)
+            setDataappprofile(resappprofile.data)
+       
 
         }catch(e)
         {
@@ -33,18 +44,35 @@ export default function App() {
         fetchall()
     },[])
     console.log("data");
-    console.log(data);
+    // console.log(data[0].id);
 
 
     // if(!ctx.isloggedein)
     // {
     //     navigate('/')
     // }
+    data.map((job,i)=>{
+        let str=dataappprofile.filter((e)=>e.jobid==job.id)
+        console.log(job)
+        console.log(i)
+        console.log(str.length>0);
+        if(str.length>0)
+        {
+           apply.push(false)
+        }else
+        {
+            apply.push(true)
+        }
+        
+     } )
+     console.log("-----------------Fetch-----------------");
+    console.log(apply);
+    console.log(data);
 return(<>
-<Snapshot></Snapshot>
+<Snapshot ></Snapshot>
 <Myapp></Myapp>
 <Search str="All Jobs"></Search>
-{data.map(a=><Card jobdata={a}></Card>)}
+{data.map((a,i)=><Card jobdata={a} app={apply[i]}></Card>)}
 
 </>
 

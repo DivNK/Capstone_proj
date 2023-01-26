@@ -8,4 +8,15 @@ Rails.application.routes.draw do
   resources :candidateprofile
   resources :job
   get "searcheligible" , to:"job#searcheligible"
+  get "count" , to:"job#count"
+  get "countapp" , to:"job#countapp"
+  post "apply" , to:"candidateapplication#create"
+  get "appprofile" , to:"candidateapplication#index"
+  post "changeapplicationstatus", to:"candidateapplication#modify"
+  get "appliedjob" , to:"job#appliedjob"
+  get "shortlisted" , to:"candidateapplication#shortlisted"
+  get "offer" , to:"candidateapplication#offer"
+  get "reject" , to:"candidateapplication#reject"
+ 
+  
 end

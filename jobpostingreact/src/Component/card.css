@@ -41,6 +41,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
    
     width: 128px;
@@ -89,4 +90,9 @@
     font-size: 14px;
     line-height: 150%;
     color: #333333;
+}
+.applied
+{
+    color: green;
+    font-size: medium;
 }

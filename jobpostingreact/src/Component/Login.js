@@ -21,7 +21,7 @@ export default function App() {
     const navigate = useNavigate();
 
     if(ctx.isloggedein) {
-        navigate('/alljobs')}
+        navigate('/dashboard')}
 
     const handleChange = (e) => {
         setLogin({
@@ -92,7 +92,7 @@ export default function App() {
                     <div className='vals'> <p>Password</p><input type="password" name="password" onChange={handleChange} /></div>
                     <br></br>
                     <button className="button" onClick={sendData}>Login</button>
-                    <button className="button" >Register</button>
+                    <Link to="register">New user click here to Register</Link>
                     
                 </div>
             </div>

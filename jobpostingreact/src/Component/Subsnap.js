@@ -10,27 +10,32 @@ export default function App() {
     let [datacd, setDatacd] = useState([]);
     let [str, setStr] = useState('');
     const { state } = useLocation();
+    let [dataappprofile, setDataappprofile] = useState([]);
+    let apply=[]
  
     console.log("in Snapshort element");
     console.log(state);
     useEffect(()=>{
         const fetchall = async () =>{
             var url="/job"
-            setStr("All Jobs")
+            setStr("Jobs in Domain")
             if(state=="i-box2")
             {
                 setStr("Eligible Jobs")
                 url="/searcheligible"
-            }else
+            }if(state=="i-box3")
             {
                 setStr("Applied Jobs")
-                url="/applied"
+                url="/appliedjob"
             }
-            try{let res = await Axios.get(url); // if you use proxy then only /book isusing cros gem then complete path
+            try{
+                let res = await Axios.get(url); // if you use proxy then only /book isusing cros gem then complete path
+                let resappprofile = await Axios.get("/appprofile");
             console.log(res.data);
             console.log("Inside Snapshot Menu");
             console.log(str);
             setDatacd(res.data)
+            setDataappprofile(resappprofile.data)
 
         }catch(e)
         {
@@ -45,11 +50,24 @@ export default function App() {
     console.log("data");
     console.log(datacd);
     console.log(str);
-
+    datacd.map((job,i)=>{
+        let str=dataappprofile.filter((e)=>e.jobid==job.id)
+        console.log(job)
+        console.log(i)
+        console.log(str.length>0);
+        if(str.length>0)
+        {
+           apply.push(false)
+        }else
+        {
+            apply.push(true)
+        }
+        
+     } )
     return (
         <>
            <Search str={str}></Search>
-           {datacd.length?datacd.map(a=><Card jobdata={a}></Card>):<div>No data</div>}
+           {datacd.length?datacd.map((a,i)=><Card jobdata={a} app={apply[i]}></Card>):<div>No data</div>}
         </>
 
     )

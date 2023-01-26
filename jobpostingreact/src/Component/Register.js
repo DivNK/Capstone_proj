@@ -1,7 +1,10 @@
 import React,{useState} from "react";
 import './register.css';
-
+import Axios from 'axios';
+import { useNavigate } from "react-router-dom";
 export default function Register(){
+    const navigate = useNavigate();
+
     let [userdata,setUserdata]=useState({});
     const handlechange = (e) =>{
         setUserdata({
@@ -9,13 +12,29 @@ export default function Register(){
             [e.target.name]:e.target.value
 
         })
-        console.log(userdata)
+        console.log("^^^^^");
+        console.log(userdata);
     }
-        const registerdata=()=> {
+       // const registerdata=()=> {
 
-            console.log("in registration function");
-            //let res = await Axios.post("http://127.0.0.1:3007/bookdetail", userdata);
-        }
+           // console.log("in registration function");
+            async function registerdata() {
+                console.log("********** in registerdata function");
+                console.log(userdata);
+                try {
+                let res = await Axios.post("/user", userdata);
+                console.log(res.headers);
+                console.log(res.data);
+                if(res.data=="Data Added"){
+                navigate('/')}
+                } catch (e) {
+                console.log(e);
+    
+               }
+    
+                
+            }
+           
     
     return (
         <div className="registerMe">
@@ -30,8 +49,12 @@ export default function Register(){
                     </tr>
                     <tr>
                         <td className="tableLabel"><label>Password: </label></td>
-                        <td className="tableInput"><input type="password"  name="pwd" onChange={handlechange} /></td>
+                        <td className="tableInput"><input type="password"  name="password" onChange={handlechange} /></td>
                     </tr>
+                    {/* <tr>
+                        <td className="tableLabel"><label>User type: </label></td>
+                        <td className="tableInput"><input type="text"  name="usertype" value="student" /></td>
+                    </tr> */}
                     </tbody>
                     </table><br/>
             <button onClick={registerdata}>REGISTER</button>

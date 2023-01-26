@@ -17,6 +17,7 @@ export default function App(props) {
     const [value3, setValue3] = useState('');
     const [value4, setValue4] = useState('');
     const navigate = useNavigate();
+    
 
     const handleChange = (e) => {
         console.log(e.target.value);
@@ -82,7 +83,9 @@ export default function App(props) {
         //do a lookup save job in context 
         navigate('/snapshot')
 
+
     }
+
     console.log(value);
     console.log(srchval);
     console.log(props);
@@ -90,11 +93,12 @@ export default function App(props) {
         <div className="srch">
             <div className="bck-cont">
             <div className="pg-title">{props.str}</div>
-            <Link to={-1}>
+            {props.str=="All Jobs"?null:<Link to={-1}>
 
                                 <div className="bck"><img src="images/bck.png" /><p>Back to search results</p></div>
 
-                            </Link></div>
+                            </Link>}
+                            </div>
             <div className="srch-in">
 
                 <form className="frmsrch">

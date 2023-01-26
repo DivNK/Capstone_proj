@@ -38,7 +38,9 @@ export default function App()
                     </div>
                     </div>
                     <div className="sec3">
+                    <Link to="/updateprofile">
                     <img src={ctx.pic} width="25" />
+                        </Link>
                     </div>
                     </div>
                     </div>

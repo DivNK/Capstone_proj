@@ -1,4 +1,4 @@
 class Job < ApplicationRecord
-    validates :jobCode, :salary, presence: true
+    validates :jobcode, :salary, presence: true
     
     end

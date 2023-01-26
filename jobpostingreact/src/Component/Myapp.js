@@ -17,33 +17,37 @@ export default function App() {
     let [data, setData] = useState([]);
     let [inputValue, setinputValue] = useState('')
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //        try{let responseall = await Axios.get("http://127.0.0.1:3001/shortlis"); 
-    //        let responseeligible = await Axios.get("http://127.0.0.1:3001/interview"); 
-    //        let responseapplied = await Axios.get("http://127.0.0.1:3001/rejected"); 
-    // let responseapplied = await Axios.get("http://127.0.0.1:3001/offer"); 
-    //         console.log(res.data);
-    //         setData(responseall.data)
+    useEffect(() => {
+        const fetchData = async () => {
+           try{
+            let res = await Axios.get("/countapp"); 
+            console.log(("-------------Mya app"));
+            console.log(res.data);
+            setData(res.data)
+            let subheader = document.querySelector(".row2a")
+            console.log(subheader.children);
+            let childofSubheader = subheader.children;
+            for (let i = 0; i < childofSubheader.length; i++){
+                console.log(childofSubheader[i]);
+                childofSubheader[i].addEventListener("click", (e) => {
+                    //change context
+                            console.log(e.target.className);
+                    navigate("/myappdetails",{state:childofSubheader[i].className})
+                })
+            }
 
-    //         // arryay of objects
-    //     }catch(e)
-    //     {
+            // arryay of objects
+        }catch(e)
+        {
             
-    //         console.log(e);
-    //     }
-    // } 
-    //     {
+            console.log(e);
+        }
+    } 
+        {
 
-    //     }
-    //     fetchData()
-    // }, [])
-    // console.log(data);
-
-
-    // let filterData = data.filter((ele) => ele.bookAuthor.toLowerCase().includes(inputValue.toLowerCase()) || ele.bookName.toLowerCase().includes(inputValue.toLowerCase()));
-
-    
+        }
+        fetchData()
+    }, [])
     return (
 
 
@@ -59,7 +63,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb1a">Shortlisted
-                    <div className="alljb-val1a">100</div>
+                    <div className="alljb-val1a">{data.shotlisted}</div>
                     </div>
                     
                     <img src="images/arrow.png" />
@@ -73,7 +77,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb2a">Interviewing
-                    <div className="alljb-val2a">80</div>
+                    <div className="alljb-val2a">{data.Interviewing}</div>
                     </div>
                     <img src="images/arrow.png" />
                 </div>
@@ -83,7 +87,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb3a">Rejected
-                    <div className="alljb-val3a">70</div>
+                    <div className="alljb-val3a">{data.Rejected}</div>
                     </div>
                     <img src="images/arrow.png" />
                 </div>
@@ -93,7 +97,7 @@ export default function App() {
 
                     </div>
                     <div className="alljb4a">Offer Recieved
-                    <div className="alljb-val4a">70</div>
+                    <div className="alljb-val4a">{data.OfferLetter}</div>
                     </div>
                     <img src="images/arrow.png" />
                 </div>
