@@ -17,6 +17,7 @@ import Subsnap from './Component/Subsnap';
 import DataContext from "./Context/DataContext.js"
 import Profileupdate from './Component/Profileupdate';
 import Register from './Component/Register';
+import Logout from './Component/Logout';
 
 
 function App() {
@@ -25,7 +26,18 @@ function App() {
     const fetchall = async () =>{
         try{
             let res = await Axios.get("/loggedin");
-          ctx.setisloggedIn(res)
+            console.log("***************");
+            console.log(res.data);
+          ctx.setisloggedIn(res.data.status)
+          if(res.data.status)
+          {
+            if (res.data.pic)
+            {
+                console.log("set pic");
+                ctx.setPic(res.data.pic)
+              }
+            ctx.setEmail(res.data.email)
+          }
 
     }catch(e)
     {
@@ -49,6 +61,7 @@ function App() {
     <Route element={<Tbl />} path="/myappdetails" />
     <Route element={<Profileupdate />} path="/updateprofile" />
     <Route element={<Register />} path="/register" />
+    <Route element={<Logout />} path="/logout" />
 
 
     </Routes></>

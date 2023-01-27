@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :login
   resources :candidateprofile
   resources :job
+  resources :logout
   get "searcheligible" , to:"job#searcheligible"
   get "count" , to:"job#count"
   get "countapp" , to:"job#countapp"
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get "shortlisted" , to:"candidateapplication#shortlisted"
   get "offer" , to:"candidateapplication#offer"
   get "reject" , to:"candidateapplication#reject"
- 
+  get "interview" , to:"candidateapplication#interview"
+  get "loggedin" , to:"user#loggedin"
+  
   
 end

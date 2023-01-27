@@ -84,4 +84,15 @@ end
             render json: ca1
         end
     end
+    def interview
+        curr_usr=User.find_by_id(session[:current_user_id])
+        puts "***************Application Shortlisted************************"
+        if(curr_usr.nil?)
+            render json: "Not logged in"
+        else
+            ca1=Candidateapplication.where(:user_id=> curr_usr.id,:candidateappstatus=> "Interviewing")
+            render json: ca1
+        end
+    end
+
 end

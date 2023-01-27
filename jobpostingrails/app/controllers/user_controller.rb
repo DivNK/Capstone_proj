@@ -25,10 +25,18 @@ def loggedin
         # curr_usr=User.find(1)
         puts session[:current_user_id]
         if(curr_usr.nil?)
-          render json: false
+          curr={:status=> false }
       else
           
-      render json: true
+        prf=Candidateprofile.find_by('email': curr_usr.email)
+        puts prf.profilePic
+        if(prf.nil?)
+            curr={:status=> true,:id => curr_usr.id, :email => curr_usr.email}
+        else
+            curr={:status=> true, :id => curr_usr.id, :email => curr_usr.email,:pic => prf.profilePic}
+        end
       end
+      render json: curr
 end
+
 end

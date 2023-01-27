@@ -14,12 +14,12 @@ class LoginController < ApplicationController
                 prf=Candidateprofile.find_by('email': usr.email)
                 puts prf.profilePic
                 if(prf.nil?)
-                    @curr_usr={:id => usr.id, :email => usr.email}
+                    curr={:id => usr.id, :email => usr.email}
                 else
-                    @curr_usr={:id => usr.id, :email => usr.email,:pic => prf.profilePic}
+                    curr={:id => usr.id, :email => usr.email,:pic => prf.profilePic}
                 end
                     puts prf
-                render json: @curr_usr
+                render json: curr
             else
                 render json: "Incorrect Password"
             end 

@@ -5,17 +5,17 @@ class JobController < ApplicationController
         puts "******************Job Create***********************"
 
 
-      p=Job.create('jobTitle': params[:jobTitle],
-        'jobDescription': params[:jobDescription],
-        'companyName': params[:companyName],
+      p=Job.create('jobtitle': params[:jobtitle],
+        'jobdescription': params[:jobdescription],
+        'companyname': params[:companyname],
         'location': params[:location],
         'salary': params[:salary],
-        'postedDate': params[:postedDate],
+        'posteddate': params[:posteddate],
         'domain': params[:domain],
-        'jobCode': params[:jobCode],
-        'jobType': params[:jobType],
-        'skillsRequired': params[:skillsRequired],
-        'applicationStatus': params[:applicationStatus])
+        'jobcode': params[:jobcode],
+        'jobtype': params[:jobtype],
+        'skillsrequired': params[:skillsrequired],
+        'applicationstatus': params[:applicationstatus])
 
       render json: "Data Added"
         

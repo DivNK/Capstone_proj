@@ -1,0 +1,31 @@
+table
+{
+    /* height: 90%; */
+    width: 86%;
+    margin: 3.5% 5%;
+    background: #FFFFFF;
+border-radius: 9px;
+
+}
+
+th
+{
+    font-size: 16px;
+    color: #323232;
+    font-weight: 500;
+    padding: 2%;
+    border-bottom: 1px solid #B6B6B6;
+    
+}
+td{
+    font-weight: 400;
+    font-size: 16px;
+    color: #686868;
+   text-align: center;
+   padding: 2%;
+   border-bottom: 1px solid #B6B6B6;
+   
+}
+tr{
+    border-bottom: 1px solid #B6B6B6;
+}
