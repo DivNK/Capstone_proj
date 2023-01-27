@@ -20,8 +20,8 @@ export default function App() {
     const [reason, setReason] = useState('');
     const navigate = useNavigate();
 
-    if(ctx.isloggedein) {
-        navigate('/dashboard')}
+    // if(ctx.isloggedein) {
+    //     navigate('/dashboard')}
 
     const handleChange = (e) => {
         setLogin({
