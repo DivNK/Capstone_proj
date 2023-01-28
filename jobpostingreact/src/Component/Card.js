@@ -54,9 +54,11 @@ export default function Card({ jobdata, app }) {
          }
 
    
+        //  console.log("Card");
+        //  console.log(data);
+        //  console.log(res);
     
-         console.log(data);
-         console.log(res);
+        //  console.log(jobdata.companyname)
 
     return (
 

@@ -20,6 +20,11 @@ def show
     render json: v
 
 end
+def index
+  v = User.all
+  render json: v
+
+end
 def loggedin
   curr_usr=User.find_by_id(session[:current_user_id])
         # curr_usr=User.find(1)

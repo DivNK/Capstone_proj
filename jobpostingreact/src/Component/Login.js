@@ -92,7 +92,7 @@ export default function App() {
                     <div className='vals'> <p>Password</p><input type="password" name="password" onChange={handleChange} /></div>
                     <br></br>
                     <button className="button" onClick={sendData}>Login</button>
-                    <Link to="register">New user click here to Register</Link>
+                    <Link to="/register">New user click here to Register</Link>
                     
                 </div>
             </div>

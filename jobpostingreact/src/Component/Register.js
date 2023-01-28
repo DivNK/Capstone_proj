@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import './register.css';
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import {
+
+    Link
+
+} from "react-router-dom";
 export default function Register() {
     const navigate = useNavigate();
 
@@ -51,6 +56,7 @@ export default function Register() {
                                 <input type="password" name="password" onChange={handlechange} />
  
                     <button className="button" onClick={registerdata}>REGISTER</button>
+                    <Link to="/">If already registered click here to Login</Link>
                 </div>
             </div>
         </div>

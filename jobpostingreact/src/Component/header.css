@@ -74,7 +74,7 @@ top: 0px;
 .ind-dash
 {
 
-    width: 11%;
+    width: 10%;
     height: 100%;
 
 display: flex;
@@ -154,6 +154,7 @@ transform: rotate(-45deg);
 .ind-dash:hover:before {
     /* The Speech-bubble tooltip and pointer will appear on hover */
     display: block;
+
 }
 .ind-p:hover
 {

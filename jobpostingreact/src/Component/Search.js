@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState,useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import "./search.css"
 import Axios from "axios"
@@ -7,15 +7,19 @@ import {
     Link
 
 } from "react-router-dom";
-
+import DataContext from "../Context/DataContext"
 
 export default function App(props) {
+    let ctx = useContext(DataContext);
+    const [scr, setScr] = useState('');
     const [value, setValue] = useState('');
     const [srchval, setSrchval] = useState({});
     const [value1, setValue1] = useState('');
     const [value2, setValue2] = useState('');
     const [value3, setValue3] = useState('');
     const [value4, setValue4] = useState('');
+  
+
     const navigate = useNavigate();
     
 
@@ -23,35 +27,48 @@ export default function App(props) {
         console.log(e.target.value);
         setValue(e.target.value);
 
-
-        setSrchval({
-            ...srchval,
-            [e.target.name]: e.target.value
-        })
+        let newArr = [...ctx.search];
+        newArr[1]=e.target.value
+        ctx.setSearch(newArr);
+        console.log("Contextvalue");
+        console.log(ctx.search);
+        // setSrchval({
+        //     ...srchval,
+        //     [e.target.name]: e.target.value
+        // })
+   
 
 
     };
     const handleChange1 = (e) => {
         console.log(e.target.value);
         setValue1(e.target.value);
+        let newArr = [...ctx.search];
+        newArr[2]=e.target.value
+        ctx.setSearch(newArr);
+        console.log("Contextvalue");
+        console.log(ctx.search);
 
-
-        setSrchval({
-            ...srchval,
-            [e.target.name]: e.target.value
-        })
+        // setSrchval({
+        //     ...srchval,
+        //     [e.target.name]: e.target.value
+        // })
 
 
     };
     const handleChange2 = (e) => {
         console.log(e.target.value);
         setValue2(e.target.value);
+        let newArr = [...ctx.search];
+        newArr[3]=e.target.value
+        ctx.setSearch(newArr);
+        console.log("Contextvalue");
+        console.log(ctx.search);
 
-
-        setSrchval({
-            ...srchval,
-            [e.target.name]: e.target.value
-        })
+        // setSrchval({
+        //     ...srchval,
+        //     [e.target.name]: e.target.value
+        // })
 
 
     };
@@ -59,11 +76,15 @@ export default function App(props) {
         console.log(e.target.value);
         setValue3(e.target.value);
 
-
-        setSrchval({
-            ...srchval,
-            [e.target.name]: e.target.value
-        })
+        let newArr = [...ctx.search];
+        newArr[4]=e.target.value
+        ctx.setSearch(newArr);
+        console.log("Contextvalue");
+        console.log(ctx.search);
+        // setSrchval({
+        //     ...srchval,
+        //     [e.target.name]: e.target.value
+        // })
 
 
     };
@@ -71,21 +92,33 @@ export default function App(props) {
         console.log(e.target.value);
         setValue4(e.target.value);
 
-
-        setSrchval({
-            ...srchval,
-            [e.target.name]: e.target.value
-        })
+        let newArr = [...ctx.search];
+        newArr[5]=e.target.value
+        ctx.setSearch(newArr);
+        console.log("Contextvalue");
+        console.log(ctx.search);
+        // setSrchval({
+        //     ...srchval,
+        //     [e.target.name]: e.target.value
+        // })
 
 
     };
-    const fetchsrchdata =()=>{
-        //do a lookup save job in context 
-        navigate('/snapshot')
 
+    const fetchsrchdataclk =()=>{
+        let inval = document.querySelector(".frmin")
+        console.log("------------Search-----------");
+        console.log(inval.value);
+        let newArr = [...ctx.search];
+        newArr[0]=inval.value
+        ctx.setSearch(newArr);
+        setScr(inval.value);
+        console.log("Contextvalue");
+        console.log(ctx.search);
+        ctx.setClkcrch(true)
 
     }
-
+    console.log(ctx.search);
     console.log(value);
     console.log(srchval);
     console.log(props);
@@ -101,11 +134,11 @@ export default function App(props) {
                             </div>
             <div className="srch-in">
 
-                <form className="frmsrch">
+                <div className="frmsrch">
 
-                    <input className="frmin" type="text" placeholder="Title,Client,Location" style={{ fontSize: 15 }}></input>
-                    <button className="srchbutton" onClick={fetchsrchdata}>Search</button>
-                </form>
+                    <input className="frmin" type="text" placeholder="Title,Client,Location" style={{ fontSize: 15 }} ></input>
+                    <button className="srchbutton" onClick={fetchsrchdataclk}>Search</button>
+                </div>
 
             </div>
         </div>

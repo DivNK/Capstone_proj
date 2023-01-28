@@ -28986,3 +28986,25 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-01-27 23:09:27 +0530
+Processing by LoginController#create as HTML
+  Parameters: {"email"=>"Test@gmil.com", "password"=>"[FILTERED]", "login"=>{"email"=>"Test@gmil.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Test@gmil.com"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:7:in `create'
+Completed 200 OK in 165ms (Views: 0.6ms | ActiveRecord: 29.4ms | Allocations: 3544)
+
+
+Started GET "/loggedin" for 127.0.0.1 at 2023-01-27 23:20:03 +0530
+Processing by UserController#loggedin as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:24:in `loggedin'
+Completed 200 OK in 199ms (Views: 0.5ms | ActiveRecord: 28.0ms | Allocations: 3643)
+
+
+Started GET "/loggedin" for 127.0.0.1 at 2023-01-27 23:20:07 +0530
+Processing by UserController#loggedin as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:24:in `loggedin'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 745)
+
+
