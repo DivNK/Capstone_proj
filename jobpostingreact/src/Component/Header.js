@@ -24,6 +24,7 @@ export default function App() {
                         })
                         sec3.addEventListener("mouseleave", () => {
                                 //change context
+
                                 setHover(false)
                         })
                         // let hvrele = document.querySelector(".hvr")
@@ -44,12 +45,12 @@ export default function App() {
 
         function imgenter(e) {
                 let sec3 = document.querySelector(".cnt-img")
-                sec3.style.border="1px solid white"
+                sec3.style.border = "1px solid white"
         }
 
         function imgleave(e) {
                 let sec3 = document.querySelector(".cnt-img")
-                sec3.style.border="none"
+                sec3.style.border = "none"
         }
         return (
                 <div className="header">
@@ -77,8 +78,8 @@ export default function App() {
                                         </div>
                                 </div>
                                 <div className="sec3">
-<div className="cnt-img">
-                                        <img onMouseEnter={imgenter} onMouseLeave={imgleave} clasName="prpic" src={ctx.pic} width="25" /></div>
+                                        <div className="cnt-img">
+                                                <img onMouseEnter={imgenter} onMouseLeave={imgleave} clasName="prpic" src={ctx.pic} width="25" /></div>
                                         {hover ? <div className="hvr"><Link to="/updateprofile">updateprofile</Link>
                                                 <Link to="/logout">logout</Link></div> : null}
                                 </div>

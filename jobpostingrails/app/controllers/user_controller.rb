@@ -16,13 +16,17 @@ class UserController < ApplicationController
         
 end
 def show
-    v = User.all
-    render json: v
+  v= User.find(params[:id]) 
+  render json: v
+  
 
 end
 def index
-  v = User.all
-  render json: v
+  curr_usr=User.find_by_id(session[:current_user_id])
+  
+    render json: curr_usr
+    
+
 
 end
 def loggedin

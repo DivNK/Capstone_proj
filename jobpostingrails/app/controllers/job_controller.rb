@@ -63,7 +63,7 @@ end
                     # final=final+jb
                 end
             else
-                str=[cp.first.skills]
+                str=cp.first.skills
                 jb="skillsrequired LIKE '%#{str}%'" + " or "
             end
             jb=jb[0...-4]
@@ -134,7 +134,7 @@ end
                     final=final+jb
                 end
             else
-                str=[cp.first.skills]
+                str=cp.first.skills
                 final=Job.where("skillsrequired LIKE '%#{str}%'")
             end
             puts "**************End Job display***********************"

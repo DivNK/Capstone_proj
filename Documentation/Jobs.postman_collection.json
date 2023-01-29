@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "520e8044-7ca4-452c-8f72-61d8485e358b",
+		"name": "Jobs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\"email\" :\"Test@gmail.com\",\r\n\"password\":\"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"jobtitle\": \"Package Consultant: SAP\",\r\n        \"jobdescription\": \"As a Package Consultant at IBM, get ready to tackle numerous mission-critical company directives.IBM's Purpose is to be essential to our clients, to the world and one another and we are confident that together as IBMers we will drive this purpose. Joining IBM is about joining a culture of openness, teamwork, trust, and the invitation and expectation to have a voice. Join us and Do your Best Work Ever. Responsibilities:Responsible for the successful delivery of the SAP TM module related deliverables in SAP and S4 HANA implementation, support and upgrade projects to meet engagement objectives and budget Lead design workshops with the client and responsible for requirement gathering, solution design, gap analysis, writing function specification, configuration, testing and cutover activities for both standalone SAP system and embedded SAP TM in S4 HANA\",\r\n        \"companyname\": \"IBM\",\r\n        \"location\": \"Chennai, TN\",\r\n        \"jobtype\": \"Part Time\",\r\n        \"salary\": \"130-150\",\r\n        \"posteddate\": \"2023-01-28\",\r\n        \"domain\": \"IT\",\r\n        \"jobcode\": \"JPC - 1698\",\r\n        \"skillsrequired\": \"Excel,\",\r\n        \"applicationstatus\": \"Open\"\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/job",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get jobs from DB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/job",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Applied job status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\"jobid\" :\"6\",\r\n\"candidateappstatus\":\"Rejected\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/changeapplicationstatus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"changeapplicationstatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Skills to DB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"skillname\": \"JAVA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/skilltable",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"skilltable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get candidate Profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {  \"firstName\": \"Divya\",\r\n    \"lastName\": \"N\",\r\n    \"email\": \"Test@gmail.com\",\r\n    \"contact\": \"9988998899\",\r\n    \"address\": \"1 main road\",\r\n    \"about\": \"7 yreas experiance in java\",\r\n    \"profilePic\": \"https://cdn.iconscout.com/icon/free/png-128/avatar-365-456317.png\",\r\n    \"currentCompany\": null,\r\n    \"ctc\": 700000,\r\n    \"experience\": 7,\r\n    \"currentRole\": \"Manager\",\r\n    \"skills\": \"React\",\r\n    \"resumeLink\": null,\r\n    \"expectedSalary\": 1000000,\r\n    \"preferredLocation\": null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/candidateprofile/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"candidateprofile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change candidate profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {  \"firstName\": \"Divya\",\r\n    \"lastName\": \"N\",\r\n    \"email\": \"Test@gmail.com\",\r\n    \"contact\": \"9988998899\",\r\n    \"address\": \"1 main road\",\r\n    \"about\": \"7 yreas experiance in java\",\r\n    \"profilePic\": \"https://cdn.iconscout.com/icon/free/png-128/avatar-365-456317.png\",\r\n    \"currentCompany\": null,\r\n    \"ctc\": 700000,\r\n    \"experience\": 7,\r\n    \"currentRole\": \"Manager\",\r\n    \"skills\": \"React,Java\",\r\n    \"resumeLink\": null,\r\n    \"expectedSalary\": 1000000,\r\n    \"preferredLocation\": null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/candidateprofile/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"candidateprofile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/user/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

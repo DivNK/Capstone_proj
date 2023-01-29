@@ -25,7 +25,7 @@ end
 def modify
     
         ca=Candidateapplication.where(:jobid=>params[:jobid])
-        
+        puts ca.size
    
     p=ca.update('candidateappstatus': params[:candidateappstatus])
 

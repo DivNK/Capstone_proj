@@ -4,19 +4,20 @@ class CandidateprofileController < ApplicationController
 
 def index 
        
-    # usr = User.find_by('email': params[:email])
-    #     if(usr.nil?)
-    #         render json: "User Not Found"
-    #     else
-    #         if(usr.authenticate(params[:password]))
-    #             session[:current_user_id] = usr.id
-    #             puts usr
-    #             prf=Candidateprofile.find_by('email': usr.email)
-    #             render json: prf
+    usr = User.find_by('email': params[:email])
+        if(usr.nil?)
+            render json: "User Not Found"
+        else
+            if(usr.authenticate(params[:password]))
+                session[:current_user_id] = usr.id
+                puts usr
+                prf=Candidateprofile.find_by('email': usr.email)
+                render json: prf
 
-    prf=Candidateprofile.find(1);
+            end
                  render json: prf
  end   
+end
 
  def show 
        

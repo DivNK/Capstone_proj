@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :candidateprofile
   resources :job
   resources :logout
+  resources :skilltable
   get "searcheligible" , to:"job#searcheligible"
   get "count" , to:"job#count"
   get "countapp" , to:"job#countapp"

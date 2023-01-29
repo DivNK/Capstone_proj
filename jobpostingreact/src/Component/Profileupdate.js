@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
 import './profileupdate.css';
-import Select from 'react-select';
 import Axios from 'axios';
-import { useNavigate } from "react-router-dom";
-
-
-
 export default function Profileupdate() {
-    const navigate = useNavigate();
+    
     let [data, setData] = useState([]);
-   
-    const options = [
-        { value:'JAVA', label: 'JAVA' },
-        { value:'ruby', label: 'Ruby' },
-        {  value:'ror',label: 'Rails' },
-        { value:'python', label: 'python' },
-        { value:'C', label: 'c' },
-       ];
-       useEffect(() => {
+    let [skilloptions, setOptions]= useState([]);
+    var myfinalstring;
+    let [selectedOption, setSelectedOption] = useState("");
+    useEffect(() => {
         const fetchData = async () => {
-
           let res = await Axios.get("/candidateprofile");
           setData(res.data);
-          console.log(data);
           console.log(res.data);
+          let result = await Axios.get("/skilltable");
+          setOptions(result.data);
+          setData({
+                        ... res.data,
+                         skills: ""
+                     }) 
+          console.log(result.data);
         }
         fetchData();
       }, [])
@@ -37,43 +32,40 @@ export default function Profileupdate() {
         console.log(data);
     }
 
-     const [selectedOption, setSelectedOption] = useState("");
-     var myfinalstring="";
-     var i=0;
-     var handleskillchange = (selectedOption) => {
-        let mystr;
-       setSelectedOption(selectedOption.value);
-       mystr=selectedOption[i].label;
-       console.log(selectedOption[i].label);
-       myfinalstring +=  mystr + ", ";
-       i=i+1;
-       console.log(myfinalstring);  
+     const handleskillchange = (event) => {
+       myfinalstring  =  event.target.value;
+       if ( selectedOption.includes(myfinalstring)== false) 
+       { 
         setData({
-          ...data,
-          skills: myfinalstring
-
-      }) 
-       }
-     async function updatedata() {
+            ...data,
+             skills: data.skills!=""?data.skills+","+myfinalstring:myfinalstring
+         })
+        setSelectedOption(selectedOption+myfinalstring+",");
+     }
+        console.log(selectedOption);
+     }
+        function updatedata() {
+       
       console.log("********** in updatedata function");
+      console.log(selectedOption);
+      setSelectedOption(selectedOption.substring(0, selectedOption.length - 1));
+
     
+     console.log(data);
+     finalupdate();
+        }
+
+     async function finalupdate() {
          try {
-            console.log(data);
         let res = await Axios.put("/candidateprofile/1", data);
         
          console.log(res.headers);
          console.log(res.data);
-         if(res.data=="Data is Updated")
-         {
-            navigate('/dashboard')
-         }
          } catch (e) {
          console.log(e);
 
         }
-
-        
-     }
+    }
      return (
         <>
          <h1>PROFILE UPDATE:</h1>
@@ -125,13 +117,20 @@ export default function Profileupdate() {
                     </tr>
                     <tr>
                         <td className="tableLabel"><label >Skill Set: </label></td>
-                         <Select 
-                        isMulti  onChange={handleskillchange}
-                        options={options} value={selectedOption}  closeMenuOnSelect={true}
-                        /> 
+                        <select name="skills" onChange={handleskillchange}
+                    size="8" multiple >
+                    {skilloptions.map((ele) => (
+                    <option >{ele.skillname}</option>
+                    
+                     ))} 
+                     </select>
                         </tr>
                     
                     <tr>
+                    <td className="tableLabel"><label >SELECTED SKILLS ARE:</label></td>
+                     <td className="tableLabel"><label >{selectedOption}</label></td>
+                    </tr>    
+                     <tr>
                         <td className="tableLabel"><label>Expected Salary: </label></td>
                         <td className="tableInput"><input type="number"  name="expectedSalary" value={data.expectedSalary} onChange={handlechange} /></td>
                     </tr>
