@@ -293,16 +293,14 @@ transform: rotate(-45deg);
   }
   a:link    { color: inherit; text-decoration: none; }
   a:visited { color: inherit; text-decoration: none; }
-  /* a:hover   { color: red; text-decoration: none; } */
-  /* a:active  { color: inherit; text-decoration: none; } */
+
   .hvr
   {
     height: 170%;
     width: 90%;
     display: flex;
     flex-direction: column;
-    /* background: #349EF5;
-    border-color: #349EF5; */
+
     border-radius: 7%;
     padding: 4%;
     justify-content: space-evenly;
@@ -310,26 +308,3 @@ transform: rotate(-45deg);
     background: #fff;
     font-size: 15px;
   }
-  /* .hvr:before {
-    border-width: 60px;
-    border-style: solid;
-  
-    content: "fdgdfg";
-    display: none;
-    /* Width and height could  be left out, but I prefer a less 'pointy' triangle 
-    height: 1px;
-    width: 1px;
-    position: absolute;
-    /* top:90%;
-    right: 3%;  
-
-
-background: #f53484;
-border-color: #34f584;
- transform: rotate(-45deg); 
-} 
-.hvr:hover:after,
-.hvr:hover:before {
-     The Speech-bubble tooltip and pointer will appear on hover 
-    display: block;
-} */

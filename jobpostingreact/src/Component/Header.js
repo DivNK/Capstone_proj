@@ -27,16 +27,7 @@ export default function App() {
 
                                 setHover(false)
                         })
-                        // let hvrele = document.querySelector(".hvr")
-
-                        // hvrele.addEventListener("mouseenter", () => {
-                        //         //change context
-                        //         setHover(true)
-                        // })
-                        // hvrele.addEventListener("mouseleave", () => {
-                        //         //change context
-                        //         setHover(false)
-                        // })
+  
 
                 }
 

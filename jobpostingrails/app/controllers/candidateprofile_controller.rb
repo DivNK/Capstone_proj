@@ -27,13 +27,7 @@ end
  end   
 
  def update 
-    # usr = User.find_by('email': params[:email])
-    #     if(usr.nil?)
-    #         render json: "User Not Found"
-    #     else
-    #         if(usr.authenticate(params[:password]))
-    #             session[:current_user_id] = usr.id
-                # puts usr
+
                 prf=Candidateprofile.find_by('email': params[:email])
                 # prf=Candidateprofile.find(1);
                 puts params[:email]

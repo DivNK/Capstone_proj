@@ -97,11 +97,7 @@ export default function App(props) {
         ctx.setSearch(newArr);
         console.log("Contextvalue");
         console.log(ctx.search);
-        // setSrchval({
-        //     ...srchval,
-        //     [e.target.name]: e.target.value
-        // })
-
+ 
 
     };
 
